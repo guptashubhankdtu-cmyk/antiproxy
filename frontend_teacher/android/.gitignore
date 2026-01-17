@@ -1,0 +1,39 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+
+# Flutter/Dart specific
+/build/
+/.dart_tool/
+/.packages
+/.flutter-plugins
+/.flutter-plugins-dependencies
+
+# IDE specific
+/.idea/
+/.vscode/
+*.iml
+
+# Sensitive configuration files
+android/key.properties
+
+# Keystore files
+*.jks
+*.keystore
+
+# Android specific
+android/.gradle/
+android/local.properties
+
+# iOS specific
+ios/Pods/
+ios/Podfile.lock
+ios/.symlinks/
+ios/Flutter/App.framework

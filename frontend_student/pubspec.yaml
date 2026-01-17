@@ -1,0 +1,48 @@
+name: aims_student_app
+description: "Student attendance tracking app for viewing classes and attendance statistics"
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  google_sign_in: ^6.2.1
+  provider: ^6.1.2
+  intl: ^0.19.0
+  http: ^1.2.1
+  flutter_secure_storage: ^9.0.0
+  cached_network_image: ^3.3.1
+  fl_chart: ^0.68.0  # For attendance charts
+  google_fonts: ^6.1.0
+  camera: ^0.10.5+5
+  google_mlkit_face_detection: ^0.13.1
+  image_picker: ^1.0.7
+  path_provider: ^2.1.1
+  flutter_blue_plus: 1.31.15
+  permission_handler: ^11.3.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  flutter_launcher_icons: ^0.13.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/dtu_logo.png
+    - assets/bronze.png
+    - assets/silver.png
+    - assets/gold.png
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/dtu_logo.png"
+  min_sdk_android: 21

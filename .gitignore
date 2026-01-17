@@ -1,0 +1,69 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+
+# IDE/project files
+.idea/
+.vscode/
+*.iml
+
+# Python/virtualenv
+.venv/
+venv/
+__pycache__/
+.env
+.env.gcp
+
+# Flutter/Dart specific
+build/
+.dart_tool/
+.packages
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Sensitive configuration files
+key.properties
+
+# Keystore files
+*.jks
+*.keystore
+aims-release.jks
+
+# Android specific
+.gradle/
+local.properties
+
+# Platform secrets that should never be committed
+bluetooth_oldios/Runner/GoogleService-Info.plist
+ios/Runner/GoogleService-Info.plist
+frontend_teacher/ios/Runner/GoogleService-Info.plist
+# .secrets is NOT ignored - it's committed for team access
+# *.secrets  # Commented out - we want to commit .secrets for collaborators
+
+# Node/Next.js
+node_modules/
+.next/
+.turbo/
+dist/
+out/
+coverage/
+.vercel/
+.pnp.*
+.parcel-cache/
+*.tsbuildinfo
+npm-debug.log*
+yarn-error.log*
+
+# Local data exports
+room*.csv
+test.csv
+
+# External projects
+Extension/meet-attendance-tracer/

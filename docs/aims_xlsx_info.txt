@@ -1,0 +1,55 @@
+AIMS.XLSX - Student Enrollment File
+=====================================
+
+Created: December 8, 2025
+Location: /home/shubhank165/SIH/AntiProxy-SIH/aims.xlsx
+Total Students: 35
+
+File Format:
+-----------
+Columns:
+  - name: Student full name
+  - rollno: Student roll number (e.g., 2K24/AIMS/01)
+  - email: Primary email address
+  - dtu_email: DTU institutional email
+  - photourl: Photo URL (if available)
+  - program: Academic program (B.Tech)
+  - sp_code: Special code (AIMS)
+  - semester: Current semester (2)
+  - status: Enrollment status (Active)
+  - duration: Program duration (4 Years)
+
+Email Mappings (from seed_allowed_emails.py):
+---------------------------------------------
+✓ Aaarat Chaddha → aaarat72@gmail.com
+✓ Aarushi → aforaarushianand@gmail.com
+✓ Mayank → mayank.jangid.moon@gmail.com
+✓ Vivaan → vivjain2007@gmail.com
+✓ Rudransh → rudranshsinghrathore15@gmail.com
+✓ Shubhank → shubhankgupta165@gmail.com
+
+Dummy Emails (for remaining students):
+-------------------------------------
+Format: {firstname}{lastname}@student.dtu.ac.in
+Examples:
+  - Aaryaman → aaryaman@student.dtu.ac.in
+  - Abhinav → abhinav@student.dtu.ac.in
+  - Akansh → akansh@student.dtu.ac.in
+  - Aman → aman@student.dtu.ac.in
+  ... (and so on for all other students)
+
+DTU Emails (for all students):
+------------------------------
+Format: {rollno_with_underscores}@dtu.ac.in
+Example: 2k24_aims_01@dtu.ac.in
+
+Usage:
+------
+This file is ready to be used in the class enrollment process.
+Upload this file when creating a new class in the teacher app.
+
+The file format matches the expected structure for:
+  - CSV import
+  - Excel/XLSX import
+  - Automated student registration
+

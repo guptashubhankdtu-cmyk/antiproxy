@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>456282833080-lkp1b7fhlfjfrc0a8e9liqlf1a102pme.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.456282833080-lkp1b7fhlfjfrc0a8e9liqlf1a102pme</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>456282833080-0ocb1esg1secupujffghq750gce3f877.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDqrvMFvvjtgTuG8iHsaE6BrI4vuzvoFTI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>456282833080</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.attendanceApp</string>
+	<key>PROJECT_ID</key>
+	<string>ai-attendance-app-1</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ai-attendance-app-1.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:456282833080:ios:a5b9c0fe5a4d8e5ac9f44d</string>
+</dict>
+</plist>

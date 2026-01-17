@@ -1,0 +1,36 @@
+Frontend Student App (detailed)
+- Flutter app for students to view classes, schedules, and attendance stats.
+- Uses FastAPI (anti-proxy-db) backend for classes/attendance via HTTP data service.
+- Google Sign-In exchanges ID token for backend JWT; stored securely.
+- If email not registered: login allowed, shows empty classes (guest flow).
+- Secure storage for JWT/user; session restore verifies JWT.
+- Class list cards show code, name, section, schedule chips, teacher info.
+- Attendance detail page shows overall percentage, counts (present/absent/late/excused), pie chart, and history list.
+- Fl_chart used for attendance visuals.
+- BT status dot per class: off (grey), ready (amber from sidecar flag), present (green from ESP32 scan).
+- Sidecar lookup per class via GET /bt-checkin/{class_id} with X-API-Key.
+- ESP32 scan uses flutter_blue_plus, matches adv/device name containing “esp32” or MAC 5C:01:3B:73:EA:A6 (with/without colons).
+- Scan duration ~10s; on match, marks local present for BT-enabled classes (no DB write).
+- Requires Bluetooth on and permissions (bluetoothScan/connect/location for older Android).
+- Snackbars indicate scan start, success (present), or not found.
+- App bar actions: refresh classes, scan for ESP32.
+- Dark theme UI with contrast for readability; BT dot and labels on class cards.
+- Attendance detail and class schedule shown per class.
+- Auth flow simplified: no photo upload requirement; unregistered users allowed.
+- Photo upload functions are stubbed/disabled to avoid backend calls.
+- Uses cached_network_image for any available student photos (if provided).
+- Provider for state management across the app.
+- HTTP data service handles loadData(), auth, JWT restore, error handling.
+- Handles token expiry by clearing session and prompting re-login.
+- Default API base URL points to production backend; no local override needed in typical runs.
+- Uses intl for date formatting in attendance records.
+- Camera/ML imports present but photo capture not required for students.
+- Platform targets: Android primary; Chrome/web for quick testing possible.
+- BLE permissions/state checks added to avoid crashes when BT off or unsupported.
+- BT present marking is local-only; future DB write can be added later.
+- Empty state text guides students to contact teacher if not enrolled.
+- Robust error handling via snackbars on auth/HTTP/scan issues.
+- Build uses pinned flutter_blue_plus 1.31.15 for compatibility.
+- Pubspec includes permission_handler for runtime permission prompts.
+- JWT/session keys stored under student-specific keys to avoid collision with teacher app.
+

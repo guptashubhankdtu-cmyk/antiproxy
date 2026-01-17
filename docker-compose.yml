@@ -1,0 +1,64 @@
+services:
+  db:
+    image: postgres:16
+    container_name: aims_postgres
+    environment:
+      POSTGRES_USER: aims
+      POSTGRES_PASSWORD: aims_pass
+      POSTGRES_DB: attendance
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./initdb:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U aims -d attendance"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - aims_network
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: aims_pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@local.com
+      PGADMIN_DEFAULT_PASSWORD: admin123
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    networks:
+      - aims_network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: aims_backend
+    environment:
+      DATABASE_URL: postgresql://aims:aims_pass@db:5432/attendance
+      JWT_SECRET: ${JWT_SECRET:-dev_jwt_secret_change_in_production}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+      DEBUG: ${DEBUG:-false}
+      CORS_ORIGINS: ${CORS_ORIGINS:-["*"]}
+      AZURE_STORAGE_CONNECTION_STRING: ${AZURE_STORAGE_CONNECTION_STRING}
+      AZURE_STORAGE_ACCOUNT_NAME: ${AZURE_STORAGE_ACCOUNT_NAME:-aimsattendanceapp}
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./backend:/app
+    networks:
+      - aims_network
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+
+networks:
+  aims_network:
+    driver: bridge

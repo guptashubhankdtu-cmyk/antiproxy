@@ -1,0 +1,31 @@
+# FastAPI and server
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+gunicorn==21.2.0
+python-multipart==0.0.6
+
+# Database
+sqlalchemy==2.0.25
+alembic==1.13.1
+psycopg2-binary==2.9.9
+asyncpg==0.29.0
+
+# Authentication
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+google-auth==2.27.0
+google-auth-oauthlib==1.2.0
+
+# Pydantic v2
+pydantic==2.5.3
+pydantic-settings==2.1.0
+email-validator==2.1.0
+
+# CORS and middleware
+python-dotenv==1.0.0
+
+# Utilities
+httpx==0.26.0
+
+# Azure Blob Storage
+azure-storage-blob==12.19.0

@@ -1,0 +1,44 @@
+Frontend Teacher App (detailed)
+- Flutter-based teacher app for class and attendance management.
+- Uses FastAPI (anti-proxy-db) backend for auth, classes, rosters, attendance records.
+- Google Sign-In exchanges ID token with backend for JWT; JWT stored securely.
+- Role: teacher/admin; teachers see only their classes.
+- Class detail page shows calendar with scheduled/rescheduled/attendance indicators.
+- Calendar supports tapping past/today scheduled days to mark attendance.
+- Future dates are blocked from marking attendance.
+- Attendance detail page shows per-day status and history.
+- Face recognition attendance flow with adjustable similarity threshold (0.30).
+- Face recognition returns processed image + recognized names; only recognized students get green dots.
+- Bluetooth check-in toggle integrated with Cloud Run sidecar (bt-checkin) to persist state.
+- Sidecar API: GET/PUT /bt-checkin/{class_id} with X-API-Key.
+- Class ID used for sidecar key (prefers backend id).
+- Orchestration page shows BT (amber) and Face (green) per student.
+- BT no longer forced for specific names; reflects actual detection logic.
+- BT toggle state fetched from sidecar at page load.
+- Face recognition results passed back to orchestration to set face-ready flags.
+- Manual override still available for adjustments.
+- Attendance save uses selected date (past/today) from calendar or orchestration.
+- Face flow inherits selected date from orchestration calendar.
+- AttendanceModel stores date, studentStatuses map, processed image path.
+- StudentStatuses: present/absent; present if face or (bt on AND enabled) at save time.
+- Reschedules respected in calendar indicators (to/from markers).
+- Scheduled/missed/attended coloring on calendar days (green/red/orange/grey).
+- Teacher can refresh classes/attendance from HTTP data service.
+- Uses cached_network_image for student avatars.
+- Uses provider for state management.
+- BLE scanning exists in teacher app for nearby scan (no longer forced on specific names).
+- Deep linking not required; navigation via Material routes.
+- Uses camera/image picker in face flow to capture or pick test image.
+- Test image option (aims_fotu2.jpg) for face flow debugging.
+- Loading overlays shown during face processing to prevent multiple actions.
+- Snackbars used for success/error feedback across flows.
+- Secure storage used for JWT/user caching.
+- Session restore verifies JWT via /users/me; clears if invalid.
+- Class edit, student list, reschedule pages linked from class detail.
+- Supports lecture/practical teacher types and LTP patterns (310/301).
+- Practical groups supported in class creation/editing.
+- Charting for attendance history (fl_chart) in detail pages (outside face page).
+- Uses code/section/schedule/teacherName in student-facing class info.
+- UI dark theme (black background, white text) with contrast adjustments.
+- Build targets: Android (device), web not primary for teacher app.
+
