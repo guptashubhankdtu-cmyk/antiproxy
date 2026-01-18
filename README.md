@@ -1,10 +1,10 @@
-# AIMS Attendance System - Production Architecture
+# Anti-Proxy Attendance System - Production Architecture
 
 A production-grade distributed attendance tracking system built with Flutter (frontend) and FastAPI + PostgreSQL (backend).
 
 ## 🎯 Project Overview
 
-This project transforms the original Firebase-based AIMS attendance app into a **fully distributed, secure, and scalable system** with:
+This project transforms the original Firebase-based attendance app into a **fully distributed, secure, and scalable system** with:
 
 - ✅ **FastAPI Backend** - High-performance Python REST API
 - ✅ **PostgreSQL Database** - Relational database with proper schema design
@@ -418,4 +418,4 @@ For issues:
 
 ---
 
-**Built with ❤️ for AIMS DTU**
+**Built with ❤️ by Team Lae Bhai**
